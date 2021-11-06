@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <!-- banner -->
+    <div class="main-banner" style="background-image: url('https://preview.colorlib.com/theme/voyage/images/xbg_2.jpg.pagespeed.ic.rSCxqGn2b-.webp')">
+        <div class="slider-item-overlay"></div>
+        <div class="grid wide">
+          <div class="text-banner" data-aos-once="true" data-aos="fade-down">
+              <br>
+              Tour Destination
+          </div>
+        </div>
+      </div>
+
+      <!-- tour -->
+      <div class="grid wide">
+        <div class="tour-list">
+          <div class="row">
+            {% for itemCategory in categories %}
+            <div class="col l-12">
+                <div class="reigion-name" data-aos-once="true" data-aos="fade-down">{{itemCategory.cat_name}}</div>
+                <div class="reigion-description" data-aos-once="true" data-aos="fade-up">{{itemCategory.cat_description}}</div>
+            </div>
+            {% endfor %}
+
+            {% for itemProduct in productCat %}
+            <div class="col l-4" data-aos-once="true" data-aos="fade-up">
+              <a href="/home/productdetail/{{itemProduct.pro_id}}" class="tour-item">
+                <div class="tour-item_img" style="background-image: url('{{itemProduct.pro_image}}')">
+                  <div class="tour-item_img-overlay"></div>
+                  <div class="tour-item_block">
+                    <div class="tour-item_block-price">${{itemProduct.pro_price}}</div>
+                    <div class="tour-item_block-title">{{itemProduct.pro_name}}</div>
+                    <div class="tour-item_block-description">{{itemProduct.description}}</div>
+                    <div class="tour-item_block-rate">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span class="tour-item_block-review">500 reviews</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+{% endblock %}

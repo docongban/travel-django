@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "../widgets/head.html" %}
+<body>
+    <div id="wrapper">
+        
+        {% include "../widgets/header.html" %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% include "../widgets/footer.html" %}
+
+       
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script>
+      // kéo thanh header
+      $(document).ready(function(){
+        $(window).scroll(function(){
+          if($(this).scrollTop()){
+              $('header').addClass('sticky');
+          } else {
+              $('header').removeClass('sticky');
+          }
+        });
+      });
+      
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init(); 
+   </script>
+</body>
+</html>

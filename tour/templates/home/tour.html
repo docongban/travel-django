@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <!-- banner -->
+    <div class="main-banner" style="background-image: url('https://preview.colorlib.com/theme/voyage/images/xbg_2.jpg.pagespeed.ic.rSCxqGn2b-.webp')">
+        <div class="slider-item-overlay"></div>
+        <div class="grid wide">
+          <div class="text-banner" data-aos-once="true" data-aos="fade-down">
+              <br>
+              Tour Destination
+          </div>
+        </div>
+      </div>
+
+      <!-- tour -->
+      <div class="grid wide">
+        <div class="tour-list">
+          <div class="row">
+            <!-- {% for itemProduct in products %}
+            <div class="col l-4" data-aos-once="true" data-aos="fade-up">
+              <a href="" class="tour-item">
+                <div class="tour-item_img" style="background-image: url('{{itemProduct.pro_image}}')">
+                  <div class="tour-item_img-overlay"></div>
+                  <div class="tour-item_block">
+                    <div class="tour-item_block-price">${{itemProduct.pro_price}}</div>
+                    <div class="tour-item_block-title">{{itemProduct.pro_name}}</div>
+                    <div class="tour-item_block-description">{{itemProduct.description}}</div>
+                    <div class="tour-item_block-rate">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span class="tour-item_block-review">500 reviews</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %} -->
+            {% for itemCategory in categories %}
+            <div class="col l-4">
+              <a href="/home/productcat/{{itemCategory.cat_id}}" class="reigion-item">
+                <div class="reigion-item__img" style="background-image: url('{{itemCategory.cat_image}}')">
+                  <div class="reigion-item__overlay"></div>
+                  <div class="reigion-item__block">
+                    <div class="reigion-item__name">{{itemCategory.cat_name}}</div>
+                    <div class="reigion-item__count">6 Places</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+{% endblock %}
