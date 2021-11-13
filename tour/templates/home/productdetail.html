@@ -23,7 +23,9 @@
                 <div class="tour-detail__name" data-aos-once="true" data-aos="fade-left">{{detail.pro_name}}</div>
                 <div class="tour-detail__description" data-aos-once="true" data-aos="fade-left">{{detail.description}}</div>
                 <div class="tour-detail__price" data-aos-once="true" data-aos="fade-left">Price: ${{detail.pro_price}}</div>
-                <button type="submit" class="tour-detail__book" data-aos-once="true" data-aos="fade-left">Book now</button>
+                <form action="/home/booknow/{{detail.pro_id}}">
+                  <button type="submit" class="tour-detail__book" data-aos-once="true" data-aos="fade-left">Book now</button>
+                </form>
               </div>
           </div>
         </div>

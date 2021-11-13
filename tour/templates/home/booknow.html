@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <!-- banner -->
+    <div class="main-banner" style="background-image: url('https://preview.colorlib.com/theme/voyage/images/xbg_5.jpg.pagespeed.ic.iBU5gqcJTZ.webp')">
+        <div class="grid wide">
+          <div class="text-banner" data-aos-once="true" data-aos="fade-down">
+              <br>
+            
+          </div>
+        </div>
+      </div>
+
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-6">
+                  <div class="contact-input" data-aos-once="true" data-aos="fade-left">
+                      <p style="color: #000;">{{detail.pro_name}}</p>
+                      <input type="text" name="cus_name" id="" class="contact-name" placeholder="Your Name" >
+                      <input type="text" name="cus_add" id="" class="contact-phone" placeholder="Address" >
+                      <input type="text" name="cus_mail" id="" class="contact-email" placeholder="Your Email" >
+                      <input type="text" name="cus_phone" id="" class="contact-phone" placeholder="Your Phone Number" >
+                      <input type="number" name="cus_soluong" min="2" id="number" class="contact-phone" placeholder="At least 2 people" >
+                      <button type="submit" class="contact-btn2">Send</button>
+                  </div>
+                </div>
+            </div>
+        </div>    
+      </form>
+{% endblock %}

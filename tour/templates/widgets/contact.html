@@ -1,10 +1,13 @@
 {% load static %}
  <!-- contact -->
- <div class="contact">
-    <div class="contact-title" data-aos-once="true" data-aos="fade-left">Contact</div>
-    <input type="text" name="full_name" id="" class="contact-name" placeholder="Your Name" data-aos-once="true" data-aos="fade-right">
-    <input type="text" name="email" id="" class="contact-email" placeholder="Your Email" data-aos-once="true" data-aos="fade-right">
-    <input type="text" name="phone_number" id="" class="contact-phone" placeholder="Your Phone Number" data-aos-once="true" data-aos="fade-right">
-    <textarea type="text" name="comment" id="" rows="4" class="contact-message" placeholder="Your Message" data-aos-once="true" data-aos="fade-right"></textarea> 
-    <button class="contact-btn"  data-aos-once="true" data-aos="fade-up">Send Message</button>
-  </div>
+ <form action="" method="post">
+  {% csrf_token %}
+  <div class="contact">
+      <div class="contact-title" data-aos-once="true" data-aos="fade-left">Contact</div>
+      <input type="text" name="full_name" id="" class="contact-name" placeholder="Your Name" data-aos-once="true" data-aos="fade-right">
+      <input type="text" name="email" id="" class="contact-email" placeholder="Your Email" data-aos-once="true" data-aos="fade-right">
+      <input type="text" name="phone_number" id="" class="contact-phone" placeholder="Your Phone Number" data-aos-once="true" data-aos="fade-right">
+      <textarea type="text" name="comment" id="" rows="4" class="contact-message" placeholder="Your Message" data-aos-once="true" data-aos="fade-right"></textarea> 
+      <button class="contact-btn"  data-aos-once="true" data-aos="fade-up">Send Message</button>
+    </div>
+</form>
