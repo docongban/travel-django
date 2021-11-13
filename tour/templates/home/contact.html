@@ -2,35 +2,43 @@
 
 {% block content %}
     <!-- banner -->
-    <div class="main-banner" style="background-image: url('https://preview.colorlib.com/theme/voyage/images/xbg_5.jpg.pagespeed.ic.iBU5gqcJTZ.webp')">
+    <div class="main-banner"
+         style="background-image: url('https://preview.colorlib.com/theme/voyage/images/xbg_5.jpg.pagespeed.ic.iBU5gqcJTZ.webp')">
         <div class="grid wide">
-          <div class="text-banner" data-aos-once="true" data-aos="fade-down">
-              <br>
-              Contact us
-          </div>
+            <div class="text-banner" data-aos-once="true" data-aos="fade-down">
+                <br>
+                Contact us
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="grid wide">
-          <div class="row">
-              <div class="col l-6">
-                  <div class="contact-infor" data-aos-once="true" data-aos="fade-right">
-                      <div class="contact-infor__title">Contact Information</div>
-                      <div class="contact-infor__address">Address: 198 West 21th Street, Suite 721 New York NY 10016</div>
-                      <div class="contact-infor__phone">Phone: + 1235 2355 98</div>
-                      <div class="contact-infor__email">Email: info@yoursite.com</div>
-                      <div class="contact-infor__web">Website yoursite.com</div>
-                  </div>
-              </div>
-              <div class="col l-6">
-                  <div class="contact-input" data-aos-once="true" data-aos="fade-left">
-                      <input type="text" name="" id="" class="contact-name" placeholder="Your Name" >
-                      <input type="text" name="" id="" class="contact-email" placeholder="Your Email" >
-                      <input type="text" name="" id="" class="contact-phone" placeholder="Your Phone Number" >
-                      <textarea type="text" name="" id="" rows="4" class="contact-message" placeholder="Your Message" ></textarea> 
-                      <button class="contact-btn2" >Send Message</button>
-                  </div>
-              </div>
-          </div>
-      </div>    
+    <form method="post">
+        {% csrf_token %}
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-6">
+                    <div class="contact-infor" data-aos-once="true" data-aos="fade-right">
+                        <div class="contact-infor__title">Contact Information</div>
+                        <div class="contact-infor__address">Address: 198 West 21th Street, Suite 721 New York NY 10016</div>
+                        <div class="contact-infor__phone">Phone: + 1235 2355 98</div>
+                        <div class="contact-infor__email">Email: info@yoursite.com</div>
+                        <div class="contact-infor__web">Website yoursite.com</div>
+                    </div>
+                </div>
+                <div class="col l-6">
+                    <div class="contact-input" data-aos-once="true" data-aos="fade-left">
+                        <input type="text" name="full_name" id="" class="contact-name" placeholder="Your Name"
+                               required="required">
+                        <input type="text" name="email" id="" class="contact-email" placeholder="Your Email"
+                               required="required">
+                        <input type="text" name="phone_number" id="" class="contact-phone" placeholder="Your Phone Number"
+                               required="required">
+                        <textarea type="text" name="comment" id="" rows="4" class="contact-message"
+                                  placeholder="Your Message"></textarea>
+                        <button type="submit" name="" id="" class="contact-btn2">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}

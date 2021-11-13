@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,HttpResponseRedirect
-from home.models import Category,Product
+
+from home.forms import CommentForm
+from home.models import Category, Product, Customer_Comment
+
 
 # Create your views here.
 
@@ -12,7 +15,17 @@ def about(request):
     return render(request,'home/about.html')
 
 def contact(request):
-    return render(request,'home/contact.html')
+    form = CommentForm()
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/home/message_ok')
+
+    context = {'form':form}
+
+    return render(request, 'home/contact.html', context)
 
 def tour(request):
     listCategory = Category.objects.all()
@@ -31,3 +44,6 @@ def productdetail(request, id):
     detail = Product.objects.get(pro_id=id)
 
     return render(request,'home/productdetail.html',{'detail':detail})
+
+def message(request):
+    return render(request, 'home/message.html')
