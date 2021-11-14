@@ -15,9 +15,12 @@
         {% csrf_token %}
         <div class="grid wide">
             <div class="row">
+                <div class="col l-5" style="margin-top:120px">
+                  <div class="tour-detail__img" data-aos-once="true" data-aos="fade-right" style="background-image: url('{{detail.pro_image}}')"></div>
+                </div>
                 <div class="col l-6">
                   <div class="contact-input" data-aos-once="true" data-aos="fade-left">
-                      <p style="color: #000;">{{detail.pro_name}}</p>
+                    <div class="tour-detail__name" data-aos-once="true" data-aos="fade-left" style="text-align:center">{{detail.pro_name}}</div>
                       <input type="text" name="cus_name" id="" class="contact-name" placeholder="Your Name" >
                       <input type="text" name="cus_add" id="" class="contact-phone" placeholder="Address" >
                       <input type="text" name="cus_mail" id="" class="contact-email" placeholder="Your Email" >
