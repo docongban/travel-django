@@ -36,7 +36,7 @@ class Customer_Comment(models.Model):
     comment = models.TextField(null = False)
     class Meta:
         db_table = 'comment'
-
+ 
 class booktour(models.Model):
     cus_id = models.AutoField(primary_key = 'true')
     cus_name=models.CharField( max_length=255, null=False)
@@ -44,9 +44,9 @@ class booktour(models.Model):
     cus_mail=models.CharField( max_length=255, null=False)
     cus_phone=models.CharField( max_length=11, null=False)
     cus_soluong=models.IntegerField(null=False)
-    cus_date_time=models.DateTimeField(max_length=255, null=False)
-    pro_name=models.CharField( max_length=255, null=False)
-    pro_price = models.FloatField(null=False)
+    cus_date_time=models.DateTimeField(max_length=255)
+    pro_name=models.CharField( max_length=255)
+    pro_price = models.FloatField()
     
     class Meta:
         db_table = 'book_tour'

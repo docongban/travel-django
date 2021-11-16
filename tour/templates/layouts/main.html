@@ -31,23 +31,31 @@
       
     </script>
 
-    <!-- <script>
+    <script>
       $(document).ready(function(){
 
       });
       function addCart(id){
-        your_name=$("#yourname").val();
-        add_ress=$("#address").val();
-        your_mail=$("#yourmail").val();
-        your_phone=$("#yourphone").val();
-        num=$("#number").val();
-        if(num<2){
-          num=2;
-        }
-        $.post('/home/addcart',{'id':id,'yourname':your_name,'yourmail':your_mail,'yourphone':your_phone,'address':add_ress,'number':num,'csrfmiddlewaretoken':'{{ csrf_token }}'},function(data,text){
+        // your_name=$("#yourname").val();
+        // add_ress=$("#address").val();
+        // your_mail=$("#yourmail").val();
+        // your_phone=$("#yourphone").val();
+        // num=$("#number").val();
+        // if(num<2){
+        //   num=2;
+        // }
+        $.post('/home/addcart',{
+          'id':id,
+          // 'yourname':your_name,
+          // 'yourmail':your_mail,
+          // 'yourphone':your_phone,
+          // 'address':add_ress,
+          // 'number':num,
+          'csrfmiddlewaretoken':'{{ csrf_token }}'},function(data,text){
         });
-    }  
-    </script> -->
+        // alert(id);
+      }  
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

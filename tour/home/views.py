@@ -57,35 +57,35 @@ def productdetail(request, id):
 def message(request):
     return render(request, 'home/message.html')
 
-def booknow(request, id):
+cart={}
+def addcart(request):
+    if request.is_ajax():
+        id=request.POST.get('id')
+        # yourname=request.POST.get('your_name')
+        # yourmail=request.POST.get('your_mail')
+        # yourphone=request.POST.get('your_phone')
+        # address=request.POST.get('add_ress')
+        # number=request.POST.get('num')
+
+        proDetail=Product.objects.get(pro_id=id)
+        iteamCart={
+            'name':proDetail.pro_name,
+            'price':proDetail.pro_price,
+            'image':proDetail.pro_image,
+        }
+        cart[id]=iteamCart
+        request.session['cart']=cart
+        cartInfo=request.session['cart']
+        html= render_to_string('home/addcart.html', {'cart': cartInfo})  
+    return HttpResponse(html)
+
+def booknow(request, id): 
     detail = Product.objects.get(pro_id=id)
-    
     form = BookForm()
 
     if request.method == 'POST':
-        form = BookForm(request.POST)
+        form =  BookForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/home/index')
 
-
-    return render(request,'home/booknow.html',{'detail':detail, 'form':form})
-# cart={}
-# def addcart(request):
-#     if request.is_ajax():
-#         id=request.POST.get('id')
-#         yourname=request.POST.get('your_name')
-#         yourmail=request.POST.get('your_mail')
-#         yourphone=request.POST.get('your_phone')
-#         address=request.POST.get('add_ress')
-#         number=request.POST.get('num')
-#         # proDetail=productdetail.objects.get(pro_id=id)
-#         # iteamCart={
-#         #     'name':proDetail.pro_name,
-#         #     'price':proDetail.pro_price
-#         # }
-#         # cart[id]=iteamCart
-#         # request.session['cart']=cart
-#         # cartInfo=request.session['cart']
-#         html= render_to_string('home/addcart.html')  
-#     return HttpResponse(html)
+    return render(request,'home/booknow.html', {'detail':detail,'form': form})

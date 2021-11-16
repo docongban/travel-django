@@ -30,8 +30,8 @@ urlpatterns = [
     path('home/productdetail/<int:id>',views.productdetail,name="chi tiet tour"),
     path('summernote/', include('django_summernote.urls')),
     path('home/message_ok',views.message,name="message_ok"),
+    path('home/addcart',views.addcart,name="booked"),
     path('home/booknow/<int:id>',views.booknow,name="book tour"),
-    # path('home/addcart',views.addcart,name="booked"),
 ]
 
 

@@ -37,7 +37,8 @@
       "patterns": [
         "What tours do you have?",
         "What kinds of tours are there?",
-        "What do you have?"
+        "What do you have?",
+        "tours"
       ],
       "responses": [
         "We have tours in 6 countries including Vietnam, USA, England, Australia, France and Italy."
@@ -51,7 +52,7 @@
         "What kinds of tours are there in Vietnam ?"
       ],
       "responses": [
-        "Coming to Vietnam, we will take you to Ha Long Bay, one of the 7 wonders of the world. Visit Tours for more details!"
+        "Coming to Vietnam, we will take you to Ha Long Bay, one of the 7 wonders of the world. Visit Tours for more details!<br> <a target='_blank' href='http://127.0.0.1:8000/home/productdetail/2'> <img src='http://static.asiawebdirect.com/m/.imaging/724x482/website/bangkok/portals/vietnam/homepage/ha-long-bay/ha-long-bay-boat-cruise/allParagraphs/BucketComponent/ListingContainer/02/image.jpg' style='width:185px; padding:15px 0;' ></img> </a> <br> Click image to view detail"
       ]
     },
     {
@@ -144,6 +145,15 @@
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "link",
+      "patterns": [
+        "facebook"
+      ],
+      "responses": [
+        "<a href='https://www.facebook.com/docongban'>link</a>"
       ]
     }
   ]
