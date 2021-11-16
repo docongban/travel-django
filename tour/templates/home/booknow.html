@@ -22,12 +22,15 @@
                   <div class="contact-input" data-aos-once="true" data-aos="fade-left">
                     <div class="tour-detail__name" data-aos-once="true" data-aos="fade-left" style="text-align:center">{{detail.pro_name}}</div>
                      
-
-                      <input type="text" name="cus_name" id="" class="contact-name" placeholder="Your Name" >
+                      <input type="text" name="cus_name" id="" class="contact-name" placeholder="Full name">
                       <input type="text" name="cus_add" id="" class="contact-phone" placeholder="Address" >
                       <input type="text" name="cus_mail" id="" class="contact-email" placeholder="Your Email" >
                       <input type="text" name="cus_phone" id="" class="contact-phone" placeholder="Your Phone Number" >
                       <input type="number" name="cus_soluong" min="2" id="number" class="contact-phone" placeholder="At least 2 people" >
+                      <input type="text" name="cus_date_start" placeholder="Date start (dd/mm/yyyy)" class="contact-name" id="">
+                      <input type="text" name="cus_date_end" placeholder="Date end (dd/mm/yyyy)" class="contact-name" id="">
+                      <input type="text" name="tour_name" value="{{detail.pro_name}}" id="" style="display:none">
+                      <input type="text" name="tour_price" value="{{detail.pro_price}}" id="" style="display:none">
                       <button type="submit" class="contact-btn2">Send</button>
                   </div>
                 </div>
