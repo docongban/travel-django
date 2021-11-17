@@ -395,6 +395,46 @@ ul#main-menu a {
   padding-left: 10px;
   margin-bottom: 20px;
 }
+.start_date{
+  height: 50px;
+  margin-left: 53px;
+  color: #000;
+  border: 1px solid rgb(100, 98, 98);
+  border-radius:3px;
+  width: 220px;
+  display: inline-block;
+}
+.start_date-label{
+  display: inline-block;
+  padding-left: 10px;
+  color: #FF4A52;
+  font-weight: bold;
+}
+.start_date-input{
+  border: none;
+  outline: none;
+}
+
+.end_date{
+  height: 50px;
+  margin-left: 5px;
+  color: #000;
+  border: 1px solid rgb(100, 98, 98);
+  border-radius:3px;
+  width: 220px;
+  display: inline-block;
+}
+.end_date-label{
+  display: inline-block;
+  padding-left: 10px;
+  color: #FF4A52;
+  font-weight: bold;
+  padding-right: 10px;
+}
+.end_date-input{
+  border: none;
+  outline: none;
+}
 .contact-message{
   display: block;
   width: 450px;
@@ -743,8 +783,7 @@ ul#main-menu a {
   bottom: 0px;
   right: 0px; 
 }
-/* CHATBOX
-=============== */
+
 .chatbox {
   position: absolute;
   bottom: 20px;
@@ -766,9 +805,8 @@ ul#main-menu a {
 /* CONTENT ISOPEN */
 .chatbox--active {
   transform: translateY(-10px);
-  z-index: 10;
+  z-index: 8;
   opacity: 1;
-
 }
 
 /* BUTTON */

@@ -32,6 +32,7 @@ urlpatterns = [
     path('home/message_ok',views.message,name="message_ok"),
     path('home/addcart',views.addcart,name="booked"),
     path('home/booknow/<int:id>',views.booknow,name="book tour"),
+    path('home/thankyou',views.thankyou,name="thanh you")
 ]
 
 

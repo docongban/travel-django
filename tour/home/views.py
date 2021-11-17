@@ -87,5 +87,9 @@ def booknow(request, id):
         form =  BookForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('/home/thankyou')
 
     return render(request,'home/booknow.html', {'detail':detail,'form': form})
+
+def thankyou(request):
+    return render(request, 'home/thankyou.html')

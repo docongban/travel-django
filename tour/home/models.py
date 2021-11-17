@@ -44,8 +44,8 @@ class booktour(models.Model):
     cus_mail=models.CharField( max_length=255, null=False)
     cus_phone=models.CharField( max_length=11, null=False)
     cus_soluong=models.IntegerField(null=False)
-    cus_date_start=models.CharField(max_length=255, null=False)
-    cus_date_end=models.CharField(max_length=255, null=False)
+    cus_date_start=models.DateField(null=False)
+    cus_date_end=models.DateField(null=False)
     tour_name=models.CharField( max_length=255, null=False)
     tour_price = models.CharField(max_length=255, null=False)
     
